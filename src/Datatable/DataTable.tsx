@@ -13,7 +13,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+import { ArrowUpDown, ChevronDown, Plus,MoreHorizontal, Link } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -259,46 +259,17 @@ export function DataTableDemo() {
   })
 
   return (
-    <div className="w-full">
-        <h2 className="font-bold from-neutral-950">Merchant</h2>
+    <div className="w-full sm:overflow-hidden">
+   
       <div className="flex items-center py-4">
-        <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm shadow-lg"
-        />
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild className="">
-            <Button variant="outline" className="ml-auto shadow-lg hover:bg-green-600 hover:text-white">
-              Columns <ChevronDown className="ml-2 h-4 w-4" />
+      <h2 className="font-bold from-neutral-950">Merchant</h2>
+   <Button variant="ghost" size="icon" className="ml-auto h-8 w-8 hover:bg-green-600 shadow-lg  hover:text-white">
+            <Plus className="h-4 w-4" />
+              <span className="sr-only">Toggle notifications</span>
             </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                )
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
       </div>
-      <div className="rounded-md border shadow-lg ">
-        <Table className="shadow-lg">
+      <div className="rounded-md border  ">
+        <Table>
              {/* =================================Table Header start============================================ */}
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
