@@ -13,7 +13,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, Plus,MoreHorizontal, Link } from "lucide-react"
+import { ArrowUpDown, ChevronDown, Plus,MoreHorizontal } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -35,6 +35,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import Link from "next/link"
 
 const data: Payment[] = [
   {
@@ -261,12 +262,12 @@ export function DataTableDemo() {
   return (
     <div className="w-full sm:overflow-hidden">
    
-      <div className="flex items-center py-4">
-      <h2 className="font-bold from-neutral-950">Merchant</h2>
-   <Button variant="ghost" size="icon" className="ml-auto h-8 w-8 hover:bg-green-600 shadow-lg  hover:text-white">
-            <Plus className="h-4 w-4" />
-              <span className="sr-only">Toggle notifications</span>
+      <div className="flex justify-between items-center py-4">
+      <h2 className="font-bold  from-neutral-950">Merchant</h2>
+      <Link href="/Form"> <Button variant="ghost" size="icon" className="ml-auto h-8 w-8 hover:bg-green-600 shadow-lg  hover:text-white">
+<Plus className="h-4 w-4" />
             </Button>
+        </Link>
       </div>
       <div className="rounded-md border  ">
         <Table>
