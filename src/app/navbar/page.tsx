@@ -19,29 +19,6 @@ import {
     GraduationCap ,
     ChevronRight, 
   } from "lucide-react"
-  
-  import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-  
-  import { Badge } from "@/components/ui/badge"
-  import { Button } from "@/components/ui/button"
-  import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
-  import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
-  import { Input } from "@/components/ui/input"
-  import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-  import { DataTableDemo } from "@/Datatable/DataTable"
   import Link from "next/link"
   import { Collapse } from '@mui/material';
 

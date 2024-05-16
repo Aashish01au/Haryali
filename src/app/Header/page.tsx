@@ -18,18 +18,8 @@ import {
   GraduationCap ,
   ChevronRight, 
 } from "lucide-react"
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -40,8 +30,10 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { DataTableDemo } from "@/Datatable/DataTable"
 import Link from "next/link"
+import Image from "next/image"
+import logo from "./logo.png"
+
 export function HeaderPage() {
   return (
     <div className="grid  w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
@@ -49,16 +41,13 @@ export function HeaderPage() {
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-2 font-semibold">
-             <img  src={"./images/logo.png"} alt="Logo" />
+              <Image src={logo} className="w-[80px] " priority alt="logo"/>
             </Link>
             <Button variant="ghost" size="icon" className="ml-auto h-8 w-8 hover:bg-green-600 shadow-lg  hover:text-white">
               <Menu className="h-4 w-4" />
               <span className="sr-only">Toggle notifications</span>
             </Button>
           </div>
-       
-       
-
         </div>
       </div>
       {/* respomsive */}
@@ -84,13 +73,7 @@ export function HeaderPage() {
                       href="/"
                       className="flex items-center gap-2 text-lg font-semibold"
                     >
-                      <img
-                        width={80}
-                        height={100}
-                        src="http://127.0.0.1:5501/hariyali-abhiyan-logo-1.png"
-                        alt="Logo"
-                      />
-         
+         <Image src={logo}    className="w-[80px] " alt="smlogo"/>
                     </Link>
                     Main Menu
                     <Link
@@ -161,6 +144,7 @@ export function HeaderPage() {
               <div className="relative">
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground " />
                 <Input
+
                   type="search"
                   placeholder="Search products..."
                   className="w-full appearance-none bg-background pl-8 focus-none shadow-none md:w-2/3 lg:w-1/3"
@@ -175,7 +159,7 @@ export function HeaderPage() {
               <Button variant="secondary" size="icon" className="rounded-full gap-3">
               <Avatar className="shadow-lg">
   <AvatarImage src="https://github.com/shadcn.png" />
-  <AvatarFallback>CN</AvatarFallback>
+  <AvatarFallback>AU</AvatarFallback>
 </Avatar>
 
               </Button>
